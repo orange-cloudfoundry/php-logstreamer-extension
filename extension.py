@@ -1,7 +1,9 @@
+import pipes
+
 LOGS_STREAMER_FILE = "logstream"
 
 def logsStreamerPath(ctx):
-	return '%s/%s' % (ctx['TMPDIR'], LOGS_STREAMER_FILE)
+	return '%s/%s' % (pipes.quote(ctx['TMPDIR']), LOGS_STREAMER_FILE)
 
 def configure(ctx):
 	pass
