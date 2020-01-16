@@ -11,11 +11,12 @@ def configure(ctx):
 def preprocess_commands(ctx):
 	cmds = []
 	cmds.append(('mkfifo', logsStreamerPath(ctx)))
-	cmds.append(('tail', '-f', logsStreamerPath(ctx), '&'))
 	return cmds
 
 def service_commands(ctx):
-	return {}
+    return {
+        "logpipe": ('tail', '-f', logsStreamerPath(ctx))
+    }
 
 def service_environment(ctx):
 	return {
