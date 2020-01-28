@@ -32,7 +32,7 @@ You will have now have to write your logs on the file path given by the env var 
 file_put_contents($_ENV['LOGS_STREAM'], "THIS IS an app log\n"); // you should see, after hitting your page, in cf logs this line without prefix.
 ```
 
-## Fpm config PHP 7.3
+## Fpm config PHP >=7.3
 
 Php fom configuration has new options for logs which achieve the same goal and let you write stdout as normal, these options are: `decorate_workers_output` and `log_limit` (see https://www.php.net/manual/en/install.fpm.configuration.php for more information).
 
