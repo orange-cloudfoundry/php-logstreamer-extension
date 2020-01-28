@@ -2,7 +2,7 @@
 
 A [php-buildpack](https://github.com/cloudfoundry/php-buildpack) extension for cloud foundry to handle logs better than with php-fpm output.
 
-:warning: On php 7.3 and higher you can simply set a fpm config as defined [here](#fpm-config-php-7-3) and this extension will be unecessary :warning:
+:warning: On php 7.3 and higher you can simply set a fpm config as defined [here](#fpm-config-php-73) and this extension will be unecessary :warning:
 
 
 ## Why ? 
@@ -14,7 +14,7 @@ There is 3 reasons to use another method to forward log to stdout when using php
 
 For points 3 a fix is coming but not yet even merged, see: https://github.com/php/php-src/pull/1076
 
-**UPDATE**: You can remove now the prefix and the log limit on PHP 7.3 and higher see [here](#fpm-config-php-7-3) to configure your php without this extension.
+**UPDATE**: You can remove now the prefix and the log limit on PHP 7.3 and higher see [here](#fpm-config-php-73) to configure your php without this extension.
 
 ## Usage
 
