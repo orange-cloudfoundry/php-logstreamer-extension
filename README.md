@@ -45,6 +45,8 @@ Let's see how to configure:
 catch_workers_output = yes
 # Remove prefix 
 decorate_workers_output = no
+
+[global]
 # Bigger log limit for avoid truncating
 log_limit = 100000
 ```
