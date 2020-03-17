@@ -34,6 +34,9 @@ file_put_contents($_ENV['LOGS_STREAM'], "THIS IS an app log\n"); // you should s
 
 ## Fpm config PHP >=7.3
 
+
+:warning: **When using this configuration you must not install this buildpack extension** :warning:
+
 Php fom configuration has new options for logs which achieve the same goal and let you write stdout as normal, these options are: `decorate_workers_output` and `log_limit` (see https://www.php.net/manual/en/install.fpm.configuration.php for more information).
 
 Let's see how to configure:
@@ -41,15 +44,16 @@ Let's see how to configure:
 2. Place a `logs.conf` file in the `.bp-config/php/fpm.d` directory with this content:
 ```conf
 [www]
-# Retrieve logs from stdout in workers
 catch_workers_output = yes
-# Remove prefix 
 decorate_workers_output = no
 
 [global]
-# Bigger log limit for avoid truncating
 log_limit = 100000
 ```
+Details:
+  - **log_limit**: Bigger log limit for avoid truncating
+  - **catch_workers_output**: Retrieve logs from stdout in workers
+  - **decorate_workers_output**: Remove prefix
 3. You can now write in stdout without worrying:
 ```php
 <?php 
